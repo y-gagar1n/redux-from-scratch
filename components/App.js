@@ -1,15 +1,23 @@
 import React, { Component } from 'react'
+import {createStore} from 'redux'
+import {Provider} from 'react-redux'
+import reducers from '../reducers'
 
 import TextBox from './TextBox'
+import TextBoxContainer from '../containers/TextBoxContainer'
+
+var store = createStore(reducers)
 
 class App extends Component {
 	render(){
 		return (
-			<div>
-				<h1>Hello!</h1>	
-				<TextBox text="hello!"/>
-				<TextBox text="hello!"/>
-			</div>
+			<Provider store={store}>
+				<div>
+					<h1>Hello!</h1>	
+					<TextBoxContainer text="hello!"/>
+					<TextBox text="hello!"/>
+				</div>
+			</Provider>
 		)
 	}
 }
