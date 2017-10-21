@@ -11,7 +11,7 @@ module.exports = {
 		path: '/',
 		filename: 'bundle.js',
 		sourceMapFilename: 'bundle.map',
-		publicPath: 'localhost:3000/dist'
+		publicPath: 'http://localhost:3000/dist/'
 	},
 	devtool: '#source-map',
 	module: {
@@ -20,7 +20,8 @@ module.exports = {
 		]
 	},
 	plugins: [
-        new webpack.HotModuleReplacementPlugin()
+	    new webpack.HotModuleReplacementPlugin(),
+	    new webpack.NoEmitOnErrorsPlugin()
     ],
 	target: 'web'
 }

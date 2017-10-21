@@ -4,6 +4,7 @@ var path = require('path')
 var webpackDevMiddleware = require('webpack-dev-middleware')  
 var webpackHotMiddleware = require('webpack-hot-middleware')  
 var config = require('./webpack.config')
+var cors = require('cors')
 
 const app = express()
 app.use(express.static(__dirname + "\\src\\client"));
@@ -20,12 +21,14 @@ const compiler = webpack(config)
 
 app.use(webpackDevMiddleware(compiler, {  
     publicPath: config.output.publicPath,  
-    stats: {colors: true}  
+    stats: {colors: true}
 }))
 
 app.use(webpackHotMiddleware(compiler, {  
     log: console.log 
 }))
+
+app.use(cors())
 
 const server = app.listen(3000, () => {
 	console.log("server is ready!")
