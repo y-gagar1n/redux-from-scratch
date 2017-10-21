@@ -14,8 +14,8 @@ class App extends Component {
 			<Provider store={store}>
 				<div>
 					<h1>Hello!</h1>	
-					<TextBoxContainer text="hello!"/>
-					<TextBox text="hello!"/>
+					<TextBoxContainer/>
+					<TextBoxContainer/>
 				</div>
 			</Provider>
 		)
