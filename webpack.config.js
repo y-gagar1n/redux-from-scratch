@@ -4,7 +4,6 @@ const webpack = require('webpack')
 module.exports = {
 	entry: [
 		'react-hot-loader/patch',
-		'webpack/hot/dev-server',
 		'webpack-hot-middleware/client',
 		'./index',
 	],
