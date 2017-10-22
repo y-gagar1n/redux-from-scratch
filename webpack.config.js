@@ -3,15 +3,20 @@ const webpack = require('webpack')
 
 module.exports = {
 	entry: [
+		'react-hot-loader/patch',
 		'webpack/hot/dev-server',
 		'webpack-hot-middleware/client',
 		'./index',
 	],
+	devServer: {
+		contentBase: '/',
+		hot: true,
+	},
 	output: {
 		path: '/',
 		filename: 'bundle.js',
 		sourceMapFilename: 'bundle.map',
-		publicPath: 'http://localhost:3000/dist/'
+		publicPath: '/'
 	},
 	devtool: '#source-map',
 	module: {
