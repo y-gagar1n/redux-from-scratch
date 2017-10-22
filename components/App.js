@@ -13,7 +13,7 @@ class App extends Component {
 		return (
 			<Provider store={store}>
 				<div>
-					<h1>Hel1dfgdfdlo!</h1>	
+					<h1>Hel2dfgdfdlo!</h1>	
 					<TextBoxContainer/>
 					<TextBoxContainer/>
 				</div>
