@@ -11,7 +11,7 @@ app.use(express.static(__dirname));
 
 let c = 0;
 
-app.get('/text', (req,res) => {
+app.get('/inc', (req,res) => {
 	res.send((c++).toString())
 })
 
