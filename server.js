@@ -9,8 +9,10 @@ var cors = require('cors')
 const app = express()
 app.use(express.static(__dirname));
 
+let c = 0;
+
 app.get('/text', (req,res) => {
-	res.send("hello1!")
+	res.send((c++).toString())
 })
 
 app.get('/', (req, res) => { 
