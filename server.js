@@ -7,9 +7,10 @@ var config = require('./webpack.config')
 var cors = require('cors')
 
 const app = express()
+app.use(express.static(__dirname));
 
 app.get('/text', (req,res) => {
-	return "hello!"
+	res.send("hello1!")
 })
 
 app.get('/', (req, res) => { 
